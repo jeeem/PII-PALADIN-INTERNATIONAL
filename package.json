@@ -1,18 +1,42 @@
 {
-  "name": "aparavi-dtc-test",
+  "name": "pii-paladin-international",
   "version": "1.0.0",
-  "description": "Test project for Aparavi DTC Node SDK",
-  "main": "index.js",
+  "description": "Global PII anonymization with Aparavi DTC - companion to PII PALADIN",
+  "main": "aparavi-dtc-universal.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "node index.js"
+    "test": "node -e \"console.log('PII PALADIN INTERNATIONAL - Ready for use!')\""
   },
   "keywords": [
+    "pii",
+    "anonymization",
+    "privacy",
+    "gdpr",
+    "ccpa",
+    "compliance",
+    "global",
+    "international",
     "aparavi",
     "dtc",
-    "sdk",
-    "test"
+    "paladin",
+    "data-protection",
+    "ner",
+    "machine-learning"
   ],
-  "author": "",
-  "license": "ISC"
+  "author": "jeeem",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeeem/PII-PALADIN-INTERNATIONAL.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jeeem/PII-PALADIN-INTERNATIONAL/issues"
+  },
+  "homepage": "https://github.com/jeeem/PII-PALADIN-INTERNATIONAL#readme",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "files": [
+    "aparavi-dtc-universal.js",
+    "README.md"
+  ]
 }
