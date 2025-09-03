@@ -238,11 +238,7 @@ async function processPII() {
 processPII();
 ```
 
-### Node.js Test
-Run `test-multicountry-pii.js` to test all 16 countries:
-```bash
-node test-multicountry-pii.js
-```
+
 
 ## 🔗 **Links**
 
