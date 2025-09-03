@@ -35,11 +35,24 @@ Visit [https://bit.ly/pii-paladin-dtc](https://bit.ly/pii-paladin-dtc) to get yo
 
 ### 2. Install & Import
 
-```javascript
-// Node.js
-const AparaviDTC = require('./aparavi-dtc-universal.js');
+```bash
+npm install pii-paladin-international
+```
 
-// Browser
+#### ES6 Import (Recommended for React/Modern apps)
+```javascript
+import AparaviDTC from 'pii-paladin-international';
+// or with named import
+import { default as AparaviDTC } from 'pii-paladin-international';
+```
+
+#### CommonJS Import
+```javascript
+const AparaviDTC = require('pii-paladin-international');
+```
+
+#### Browser
+```html
 <script src="aparavi-dtc-universal.js"></script>
 ```
 
@@ -56,6 +69,41 @@ const anonymizedText = await aparaviDTC.sendText('Hello, my name is John Smith. 
 
 // Clean up when done
 await aparaviDTC.tearDown();
+```
+
+### React Component Example
+
+```jsx
+import React, { useState, useEffect } from 'react';
+import AparaviDTC from 'pii-paladin-international';
+
+function PIIAnonymizer() {
+  const [aparaviDTC, setAparaviDTC] = useState(null);
+  
+  useEffect(() => {
+    const initDTC = async () => {
+      const dtc = new AparaviDTC('your-api-key-here');
+      await dtc.startPIIPipeline();
+      setAparaviDTC(dtc);
+    };
+    
+    initDTC();
+    
+    return () => {
+      if (aparaviDTC) {
+        aparaviDTC.tearDown();
+      }
+    };
+  }, []);
+
+  const handleAnonymize = async (text) => {
+    if (aparaviDTC) {
+      return await aparaviDTC.sendText(text);
+    }
+  };
+
+  // ... rest of component
+}
 ```
 
 ## ⚠️ **Important Usage Notes**
@@ -238,7 +286,45 @@ async function processPII() {
 processPII();
 ```
 
+## Installation
 
+```bash
+npm install pii-paladin-international
+```
+
+## Module Formats
+
+This package supports multiple module formats:
+
+- **ES6 Modules** (`.esm.mjs`) - For modern bundlers and React apps
+- **CommonJS** (`.js`) - For Node.js and older bundlers  
+- **TypeScript** (`.d.ts`) - For TypeScript projects
+- **Browser** - Direct script tag inclusion
+
+## Usage
+
+```javascript
+// Node.js
+const AparaviDTC = require('./aparavi-dtc-universal.js');
+
+// Browser
+<script src="aparavi-dtc-universal.js"></script>
+```
+
+### 3. Start Using
+
+```javascript
+const aparaviDTC = new AparaviDTC('your-api-key-here');
+
+// Start the PII pipeline
+await aparaviDTC.startPIIPipeline();
+
+// Anonymize text (automatically detects country and PII type)
+const anonymizedText = await aparaviDTC.sendText('Hello, my name is John Smith. My SSN is 123-45-6789.');
+
+// Clean up when done
+await aparaviDTC.tearDown();
+```
 
 ## 🔗 **Links**
 

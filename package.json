@@ -3,7 +3,15 @@
   "version": "1.1.1",
   "description": "🌍 Global PII anonymization & data protection for international compliance (GDPR, CCPA, LGPD, etc.) using Aparavi DTC AI",
   "main": "aparavi-dtc-universal.js",
+  "module": "aparavi-dtc-universal.esm.mjs",
   "types": "aparavi-dtc-universal.d.ts",
+  "exports": {
+    ".": {
+      "import": "./aparavi-dtc-universal.esm.mjs",
+      "require": "./aparavi-dtc-universal.js",
+      "types": "./aparavi-dtc-universal.d.ts"
+    }
+  },
   "scripts": {
     "test": "node -e \"console.log('PII PALADIN INTERNATIONAL - Ready for use!')\""
   },
@@ -69,6 +77,7 @@
   ],
   "files": [
     "aparavi-dtc-universal.js",
+    "aparavi-dtc-universal.esm.mjs",
     "aparavi-dtc-universal.d.ts",
     "README.md"
   ]

@@ -28,4 +28,8 @@ declare class AparaviDTC {
   tearDown(): Promise<void>;
 }
 
+// CommonJS export
 export = AparaviDTC;
+
+// ES6 export
+export default AparaviDTC;
