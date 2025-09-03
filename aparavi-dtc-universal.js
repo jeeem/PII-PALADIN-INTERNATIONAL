@@ -23827,7 +23827,17 @@ const PIPELINE_CONFIG = {
     }
 };
 
+/**
+ * Aparavi DTC Universal Client for PII Anonymization
+ * Compatible with both Node.js and browser environments
+ * @class
+ */
 class AparaviDTC {
+  /**
+   * Create a new AparaviDTC instance
+   * @param {string} apiKey - Your Aparavi DTC API key
+   * @param {string} [apiBaseUrl] - Base URL for the API (defaults to 'https://eaas.aparavi.com')
+   */
   constructor(apiKey, apiBaseUrl = 'https://eaas.aparavi.com') {
     this.apiKey = apiKey;
     this.apiBaseUrl = apiBaseUrl;
@@ -23838,6 +23848,10 @@ class AparaviDTC {
     this.setupCleanupHandlers();
   }
 
+  /**
+   * Setup cleanup handlers for different environments
+   * @private
+   */
   setupCleanupHandlers() {
     // Node.js cleanup
     if (typeof process !== 'undefined') {
@@ -23853,6 +23867,10 @@ class AparaviDTC {
     }
   }
 
+  /**
+   * Clean up resources and teardown pipeline
+   * @private
+   */
   async cleanup() {
     if (this.token && this.type) {
       try {
@@ -23863,6 +23881,11 @@ class AparaviDTC {
     }
   }
 
+  /**
+   * Get the pipeline configuration
+   * @returns {Object} - Pipeline configuration object
+   * @private
+   */
   getPipelineJson() {
     // Return the embedded pipeline configuration
     // Extract the pipeline configuration from the nested structure
@@ -23872,6 +23895,12 @@ class AparaviDTC {
     return PIPELINE_CONFIG;
   }
 
+  /**
+   * Validate the pipeline configuration
+   * @param {Object} pipelineJson - Pipeline configuration to validate
+   * @returns {Promise<Object>} - Validation result
+   * @private
+   */
   async validatePipeline(pipelineJson) {
     try {
       const response = await fetch(`${this.apiBaseUrl}/pipe/validate`, {
@@ -23895,6 +23924,12 @@ class AparaviDTC {
     }
   }
 
+  /**
+   * Execute the pipeline
+   * @param {Object} pipelineJson - Pipeline configuration to execute
+   * @returns {Promise<Object>} - Execution result
+   * @private
+   */
   async executePipeline(pipelineJson) {
     try {
       // The API expects the pipeline configuration to be wrapped in a 'pipeline' key
@@ -23923,6 +23958,11 @@ class AparaviDTC {
     }
   }
 
+  /**
+   * Get the current pipeline status
+   * @returns {Promise<Object>} - Pipeline status information
+   * @private
+   */
   async getPipelineStatus() {
     if (!this.token || !this.type) {
       throw new Error('No active pipeline. Call startPIIPipeline first.');
@@ -23948,6 +23988,12 @@ class AparaviDTC {
     }
   }
 
+  /**
+   * Wait for the pipeline to reach running status
+   * @param {number} [timeoutMinutes=10] - Timeout in minutes
+   * @returns {Promise<void>}
+   * @private
+   */
   async waitForRunningStatus(timeoutMinutes = 10) {
     if (!this.token || !this.type) {
       throw new Error('No active pipeline. Call startPIIPipeline first.');
@@ -23974,6 +24020,10 @@ class AparaviDTC {
     return taskStatus;
   }
 
+  /**
+   * Start the PII anonymization pipeline
+   * @returns {Promise<void>}
+   */
   async startPIIPipeline() {
     try {
       const pipelineJson = this.getPipelineJson();
@@ -24016,6 +24066,11 @@ class AparaviDTC {
     }
   }
 
+  /**
+   * Send text for PII anonymization
+   * @param {string} textData - Text containing PII to anonymize
+   * @returns {Promise<string>} - Anonymized text
+   */
   async sendText(textData) {
     if (!this.token || !this.type) {
       throw new Error('No active pipeline. Call startPIIPipeline first.');
@@ -24068,6 +24123,10 @@ class AparaviDTC {
     }
   }
 
+  /**
+   * Clean up the pipeline and resources
+   * @returns {Promise<void>}
+   */
   async tearDown() {
     if (!this.token || !this.type) {
       console.log('ℹ️ No active pipeline to tear down');

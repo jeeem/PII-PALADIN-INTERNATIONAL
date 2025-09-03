@@ -1,8 +1,9 @@
 {
   "name": "pii-paladin-international",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Global PII anonymization with Aparavi DTC - companion to PII PALADIN",
   "main": "aparavi-dtc-universal.js",
+  "types": "aparavi-dtc-universal.d.ts",
   "scripts": {
     "test": "node -e \"console.log('PII PALADIN INTERNATIONAL - Ready for use!')\""
   },
@@ -37,6 +38,7 @@
   },
   "files": [
     "aparavi-dtc-universal.js",
+    "aparavi-dtc-universal.d.ts",
     "README.md"
   ]
 }
