@@ -1,6 +1,6 @@
 {
   "name": "pii-paladin-international",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "🌍 Global PII anonymization & data protection for international compliance (GDPR, CCPA, LGPD, etc.) using Aparavi DTC AI",
   "main": "aparavi-dtc-universal.js",
   "module": "aparavi-dtc-universal.esm.mjs",
