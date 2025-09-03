@@ -1,7 +1,7 @@
 {
   "name": "pii-paladin-international",
-  "version": "1.1.0",
-  "description": "Global PII anonymization with Aparavi DTC - companion to PII PALADIN",
+  "version": "1.1.1",
+  "description": "🌍 Global PII anonymization & data protection for international compliance (GDPR, CCPA, LGPD, etc.) using Aparavi DTC AI",
   "main": "aparavi-dtc-universal.js",
   "types": "aparavi-dtc-universal.d.ts",
   "scripts": {
@@ -10,9 +10,11 @@
   "keywords": [
     "pii",
     "anonymization",
+    "anonymize",
     "privacy",
     "gdpr",
     "ccpa",
+    "lgpd",
     "compliance",
     "global",
     "international",
@@ -20,8 +22,20 @@
     "dtc",
     "paladin",
     "data-protection",
+    "data-privacy",
+    "personal-data",
     "ner",
-    "machine-learning"
+    "machine-learning",
+    "ai",
+    "artificial-intelligence",
+    "data-masking",
+    "data-scrubbing",
+    "data-sanitization",
+    "privacy-tools",
+    "compliance-tools",
+    "enterprise",
+    "security",
+    "data-governance"
   ],
   "author": "jeeem",
   "license": "ISC",
@@ -33,9 +47,26 @@
     "url": "https://github.com/jeeem/PII-PALADIN-INTERNATIONAL/issues"
   },
   "homepage": "https://github.com/jeeem/PII-PALADIN-INTERNATIONAL#readme",
+  "documentation": "https://github.com/jeeem/PII-PALADIN-INTERNATIONAL#readme",
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/jeeem/PII-PALADIN-INTERNATIONAL"
+  },
   "engines": {
     "node": ">=14.0.0"
   },
+  "publishConfig": {
+    "access": "public"
+  },
+  "os": [
+    "linux",
+    "darwin",
+    "win32"
+  ],
+  "cpu": [
+    "x64",
+    "arm64"
+  ],
   "files": [
     "aparavi-dtc-universal.js",
     "aparavi-dtc-universal.d.ts",
