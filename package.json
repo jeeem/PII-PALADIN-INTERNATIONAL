@@ -1,0 +1,18 @@
+{
+  "name": "aparavi-dtc-test",
+  "version": "1.0.0",
+  "description": "Test project for Aparavi DTC Node SDK",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node index.js"
+  },
+  "keywords": [
+    "aparavi",
+    "dtc",
+    "sdk",
+    "test"
+  ],
+  "author": "",
+  "license": "ISC"
+}
