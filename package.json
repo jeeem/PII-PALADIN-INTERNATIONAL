@@ -1,6 +1,6 @@
 {
   "name": "pii-paladin-international",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Global PII anonymization with Aparavi DTC - companion to PII PALADIN",
   "main": "aparavi-dtc-universal.js",
   "scripts": {
